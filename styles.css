@@ -19,7 +19,7 @@ header {
     justify-content: center;
     align-items: center;
     gap: 15px;
-    padding: 10px 80px 0 0;
+    padding: 10px 100px 0 0;
 }
 
 header img {
@@ -42,7 +42,7 @@ h1 span {
 
 #emotion-selector {
     font-size: 1rem;
-    padding: 5px 55px;
+    padding: 4px 85px 4px 9px;
     border-radius: 5px;
 }
 
@@ -53,5 +53,37 @@ h1 span {
 #get-image-btn {
     font-size: 1.5rem;
     border-radius: 5px;
-    padding: 15px 40px;
+    padding: 14px 46px;
+}
+
+#meme-modal {
+    width: 420px;
+    height: 545px;
+    background-color: #fcf1ef;
+    padding-top: 10px;
+    position: fixed;
+    inset: 0;
+    margin: 80px auto auto auto;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: none;
+}
+
+#meme-modal img {
+    width: 83%;
+    height: 83%;
+    margin: 14px auto auto;
+    display: block;
+}
+
+#meme-modal-close-btn {
+    border-radius: 50%;
+    width: 26px;
+    height: 25px;
+    border: 2px solid black;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: 10px;
+    background-color: transparent;
 }
