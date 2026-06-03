@@ -11,6 +11,7 @@ const memeModalImageContainer = document.getElementById(
 
 getImageBtn.addEventListener("click", renderCat);
 memeModalCloseBtn.addEventListener("click", closeModal);
+renderEmotionsSelectorOptions();
 
 function closeModal() {
   memeModal.style.display = "none";
@@ -67,5 +68,3 @@ function renderEmotionsSelectorOptions() {
   }
   emotionSelector.innerHTML = emotionOptionsHTMLString;
 }
-
-renderEmotionsSelectorOptions();
