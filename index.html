@@ -11,18 +11,31 @@
         />
     </head>
     <body>
-        <header>
-            <img src="./images/pumpkin.png" alt="A cat wondering" />
-            <h1 aria-label="Pumpkin's Perfect Meme Picker.">
-                Pumpkin's Purrfect... <span>Meme Picker</span>
+        <header class="stylized-color">
+            <img
+                src="./images/pumpkin.png"
+                alt="The cat called Pumpkin looking at the website logo."
+            />
+            <h1 aria-label="Pumpkin's perfect meme picker.">
+                Pumpkin's Purrfect...<br /><span>Meme Picker</span>
             </h1>
         </header>
         <main>
-            <label for="emotion-selector">Select Your Current Emotion</label>
-            <select id="emotion-selector"></select>
-            <label for="gifs-only-checkbox">Animated GIFs only</label>
-            <input type="checkbox" id="gifs-only-checkbox" />
-            <button type="button">Get Image</button>
+            <label
+                for="emotion-selector"
+                class="bold"
+                id="emotion-selector-label"
+                >Select Your Current Emotion</label
+            >
+            <select class="bold stylized-color" id="emotion-selector"></select>
+            <div id="gifs-checkbox-container">
+                <label for="gifs-only-checkbox">Animated GIFs only</label>
+                <input id="gifs-only-checkbox" type="checkbox" />
+            </div>
+            <button class="stylized-color" id="get-image-btn" type="button">
+                Get Image
+            </button>
         </main>
+        <script src="./main.js"></script>
     </body>
 </html>
