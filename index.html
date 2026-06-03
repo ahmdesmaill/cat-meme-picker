@@ -1,10 +1,28 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="styles.css" />
         <title>Cats ✨</title>
+        <link rel="stylesheet" href="styles.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
-        <h1>Hello</h1>
+        <header>
+            <img src="./images/pumpkin.png" alt="A cat wondering" />
+            <h1 aria-label="Pumpkin's Perfect Meme Picker.">
+                Pumpkin's Purrfect... <span>Meme Picker</span>
+            </h1>
+        </header>
+        <main>
+            <label for="emotion-selector">Select Your Current Emotion</label>
+            <select id="emotion-selector"></select>
+            <label for="gifs-only-checkbox">Animated GIFs only</label>
+            <input type="checkbox" id="gifs-only-checkbox" />
+            <button type="button">Get Image</button>
+        </main>
     </body>
 </html>
