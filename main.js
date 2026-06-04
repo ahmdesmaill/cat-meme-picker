@@ -1,31 +1,35 @@
 import { catsData } from "./data.js";
 
 const emotionSelector = document.getElementById("emotion-selector");
-const getImageBtn = document.getElementById("get-image-btn");
 const gifsOnlyCheckbox = document.getElementById("gifs-only-checkbox");
 const memeModal = document.getElementById("meme-modal");
-const memeModalCloseBtn = document.getElementById("meme-modal-close-btn");
 const memeModalImageContainer = document.getElementById(
   "meme-modal-image-container",
 );
+const elementsThatShouldNotCloseMemeModal = new Set();
+elementsThatShouldNotCloseMemeModal.add("meme-modal");
+elementsThatShouldNotCloseMemeModal.add("get-image-btn");
+elementsThatShouldNotCloseMemeModal.add("meme-modal-image-container");
+elementsThatShouldNotCloseMemeModal.add("meme-modal-img");
 
-getImageBtn.addEventListener("click", renderCat);
-memeModalCloseBtn.addEventListener("click", closeModal);
+document.getElementById("get-image-btn").addEventListener("click", renderCat);
+document.getElementById("html").addEventListener("click", closeModal);
 renderEmotionsSelectorOptions();
 
-function closeModal() {
-  memeModal.style.display = "none";
+function closeModal(event) {
+  if (!elementsThatShouldNotCloseMemeModal.has(event.target.id)) {
+    memeModal.style.display = "none";
+  }
 }
 
 function renderCat(event) {
   const randomCat = getRandomCatObject();
-  memeModalImageContainer.innerHTML = `<img src="./images/${randomCat.image}" alt="${randomCat.alt}"/>`;
+  memeModalImageContainer.innerHTML = `<img id="meme-modal-img" src="./images/${randomCat.image}" alt="${randomCat.alt}"/>`;
   memeModal.style.display = "block";
 }
 
 function getRandomCatObject() {
   const matchingCats = getMatchingCats();
-  // console.log(matchingCats);
   if (matchingCats.length === 1) {
     return matchingCats[0];
   } else {
