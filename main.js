@@ -6,20 +6,27 @@ const memeModal = document.getElementById("meme-modal");
 const memeModalImageContainer = document.getElementById(
   "meme-modal-image-container",
 );
-const elementsThatShouldNotCloseMemeModal = new Set();
-elementsThatShouldNotCloseMemeModal.add("meme-modal");
-elementsThatShouldNotCloseMemeModal.add("get-image-btn");
-elementsThatShouldNotCloseMemeModal.add("meme-modal-image-container");
-elementsThatShouldNotCloseMemeModal.add("meme-modal-img");
+const elementsThatShouldNotCloseMemeModal = new Set([
+  "meme-modal",
+  "meme-modal-image-container",
+  "meme-modal-img",
+  "get-image-btn",
+]);
 
 document.getElementById("get-image-btn").addEventListener("click", renderCat);
 document.getElementById("html").addEventListener("click", closeModal);
 renderEmotionsSelectorOptions();
 
 function closeModal(event) {
-  if (!elementsThatShouldNotCloseMemeModal.has(event.target.id)) {
-    memeModal.style.display = "none";
+  if (elementsThatShouldNotCloseMemeModal.has(event.target.id)) {
+    return;
   }
+  for (const className of event.target.classList) {
+    if (elementsThatShouldNotCloseMemeModal.has(className)) {
+      return;
+    }
+  }
+  memeModal.style.display = "none";
 }
 
 function renderCat(event) {
